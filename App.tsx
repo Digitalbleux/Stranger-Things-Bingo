@@ -251,8 +251,8 @@ const App: React.FC = () => {
         
         {/* Header Section */}
         <header className="mt-8 mb-6 text-center w-full relative">
-           {/* Header Container with CSS-only atmosphere to avoid broken images */}
-           <div className="relative h-48 md:h-60 w-full mb-4 rounded-lg overflow-hidden border-2 border-red-900/50 shadow-[0_0_30px_rgba(220,38,38,0.3)] bg-gray-900 group z-10">
+           {/* Increased height to h-56/72 to ensure title is visible below logo */}
+           <div className="relative h-56 md:h-72 w-full mb-4 rounded-lg overflow-hidden border-2 border-red-900/50 shadow-[0_0_30px_rgba(220,38,38,0.3)] bg-gray-900 group z-10">
               
               {/* Parallax Background Layer Group */}
               <div ref={headerBgRef} className="absolute inset-0 w-full h-full scale-110 origin-center transition-transform duration-75 ease-out will-change-transform">
@@ -265,7 +265,7 @@ const App: React.FC = () => {
               </div>
               
               {/* Parallax Content Layer */}
-              <div ref={headerContentRef} className="absolute inset-0 flex items-center justify-center flex-col pt-4 z-20 will-change-transform">
+              <div ref={headerContentRef} className="absolute inset-0 flex items-center justify-center flex-col pt-2 z-20 will-change-transform">
                 <div className="w-64 md:w-80 lg:w-[28rem] relative transition-transform duration-700 hover:scale-105">
                   {/* Stranger Things Logo */}
                   <img 
@@ -274,7 +274,8 @@ const App: React.FC = () => {
                     className="w-full h-auto drop-shadow-[0_0_15px_rgba(255,0,0,0.8)] filter brightness-110 contrast-125"
                   />
                 </div>
-                <h2 className="text-red-500 font-serif text-sm md:text-xl tracking-[0.2em] mt-4 text-shadow-lg animate-pulse font-bold">
+                {/* UPGRADED SUBTITLE: Using font-stranger and text-glow-red for maximum visibility */}
+                <h2 className="text-red-600 font-stranger text-lg md:text-2xl tracking-[0.15em] mt-3 md:mt-4 text-glow-red animate-pulse font-bold">
                   Season 5 Finale Bingo
                 </h2>
               </div>
