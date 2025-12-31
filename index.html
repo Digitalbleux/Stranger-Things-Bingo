@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Stranger Things S5 Bingo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Benguiat+ITC:wght@700&family=Courier+Prime:wght@400;700&family=Permanent+Marker&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* Emulate the iconic font using a close Google Font match + CSS effects if Benguiat isn't locally available, 
+       but we try to fetch it or a lookalike. 'Courier Prime' for the 80s typed feel. 'Permanent Marker' for the X. */
+    
+    @import url('https://fonts.cdnfonts.com/css/itc-benguiat'); /* Try to load the real deal if possible from cdnfonts */
+
+    body {
+      font-family: 'Courier Prime', monospace;
+      background-color: #0f0f10;
+      color: #e2e2e2;
+      overflow-x: hidden;
+    }
+
+    .font-stranger {
+      font-family: 'ITC Benguiat', 'serif';
+      text-transform: uppercase;
+    }
+
+    .text-glow-red {
+      text-shadow: 
+        0 0 5px #ff0000,
+        0 0 10px #8b0000,
+        0 0 20px #8b0000;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a; 
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #888; 
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+    }
+
+    /* Animation for the red X strokes */
+    .crayon-stroke {
+      stroke-dasharray: 150;
+      stroke-dashoffset: 150;
+    }
+    
+    .stroke-1 {
+      animation: drawStroke 0.2s ease-out forwards;
+    }
+    
+    .stroke-2 {
+      animation: drawStroke 0.2s ease-out 0.2s forwards; /* Starts after stroke 1 finishes */
+    }
+
+    @keyframes drawStroke {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    /* Spore particles animation background */
+    .spore-bg {
+      background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+      background-size: 550px 550px, 350px 350px, 250px 250px;
+      background-position: 0 0, 40px 60px, 130px 270px;
+      animation: floatSpores 60s linear infinite;
+    }
+
+    @keyframes floatSpores {
+      from { background-position: 0 0, 40px 60px, 130px 270px; }
+      to { background-position: 550px 550px, 390px 410px, 680px 820px; }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+<body class="spore-bg min-h-screen">
+  <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
+</body>
+</html>
